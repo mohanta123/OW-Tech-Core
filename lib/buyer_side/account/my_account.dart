@@ -19,9 +19,9 @@ class _Setting_screenState extends State<Setting_screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: colorObj.pruple,
+        backgroundColor: colorObj.main_colorP,
         centerTitle: true,
-        title: Text("Setting"),
+        title: Text("Setting",style: TextStyle(color: Colors.white),),
         elevation: 4,
       ),
       body: Padding(
@@ -36,7 +36,7 @@ class _Setting_screenState extends State<Setting_screen> {
               child: ListTile(
                 leading: Icon(
                   Icons.person,
-                  color: Colors.purple[300],
+                  color: colorObj.main_colorP,
                 ),
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,7 +62,7 @@ class _Setting_screenState extends State<Setting_screen> {
               child: ListTile(
                 leading: Icon(
                   Icons.phone_android,
-                  color: Colors.purple[300],
+                  color: colorObj.main_colorP,
                 ),
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -88,7 +88,7 @@ class _Setting_screenState extends State<Setting_screen> {
               child: ListTile(
                 leading: Icon(
                   Icons.language,
-                  color: Colors.purple[300],
+                  color: colorObj.main_colorP,
                 ),
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -114,7 +114,7 @@ class _Setting_screenState extends State<Setting_screen> {
               child: ListTile(
                 leading: Icon(
                   Icons.dark_mode,
-                  color: Colors.purple[300],
+                  color: colorObj.main_colorP,
                 ),
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -156,7 +156,7 @@ class _Setting_screenState extends State<Setting_screen> {
               child: ListTile(
                 leading: Icon(
                   Icons.exit_to_app,
-                  color: Colors.purple[300],
+                  color: colorObj.main_colorP,
                 ),
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

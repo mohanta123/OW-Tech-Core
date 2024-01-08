@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-
+import '../../Text_font_class/text_font_class.dart';
 import '../../color/color.dart';
-
-
 class Basket extends StatefulWidget {
   const Basket({Key? key}) : super(key: key);
-
   @override
   State<Basket> createState() => _BasketState();
 }
@@ -22,13 +19,16 @@ class _BasketState extends State<Basket> {
 
   int totalprice = 0;
   ColorSelect colorObj = ColorSelect();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: colorObj.pruple,
-        title: Text("Catagories",style: TextStyle(color: Colors.white),),
+        backgroundColor: colorObj.main_colorP,
+        title: Text("Catagories", style: TextFont.bold_TextStyle.copyWith(
+          color: Colors.white,fontSize: 20,
+        ),),
       ),
       body: Padding(
         padding: const EdgeInsets.all(5.0),
@@ -62,8 +62,9 @@ class _BasketState extends State<Basket> {
                           children: [
                             Text(
                               "Atta",
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                              style: TextFont.bold_TextStyle.copyWith(
+                                color: Colors.black,fontSize: 18,
+                              ),
                             ),
                             SizedBox(
                               height: 5,
@@ -73,7 +74,9 @@ class _BasketState extends State<Basket> {
                             ),
                             Text(
                               "2pc",
-                              style: TextStyle(color: Colors.grey),
+                              style: TextFont.normal_TextStyle.copyWith(
+                                color: Colors.black,fontSize: 12,
+                              ),
                             ),
                             SizedBox(
                               height: 10,
@@ -84,11 +87,11 @@ class _BasketState extends State<Basket> {
                                   children: [
                                     Text(
                                       "₹ 12",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
+                                      style: TextFont.bold_TextStyle.copyWith(
+                                        color: Colors.black,fontSize: 15,
+                                      ),
                                     ),
-                                    Text(Attprice.toString()),
+                                    Text(Attprice.toString(),style: TextStyle( decoration: TextDecoration.lineThrough,),),
                                   ],
                                 ),
                                 Padding(
@@ -125,9 +128,9 @@ class _BasketState extends State<Basket> {
                                 ),
                                 Text(
                                   Attcounter.toString(),
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
+                                  style: TextFont.normal_TextStyle.copyWith(
+                                    color: Colors.black,fontSize: 18,
+                                  ),
                                 ),
                                 SizedBox(
                                   width: 10,
@@ -217,9 +220,9 @@ class _BasketState extends State<Basket> {
                                       "₹ 12",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 16),
+                                          fontSize: 16,),
                                     ),
-                                    Text(Saltprice.toString()),
+                                    Text(Saltprice.toString(),style:TextStyle( decoration: TextDecoration.lineThrough,),),
                                   ],
                                 ),
                                 Padding(
@@ -257,7 +260,7 @@ class _BasketState extends State<Basket> {
                                   Saltcounter.toString(),
                                   style: TextStyle(
                                       fontSize: 18,
-                                      fontWeight: FontWeight.bold),
+                                      fontWeight: FontWeight.bold,),
                                 ),
                                 SizedBox(
                                   width: 10,

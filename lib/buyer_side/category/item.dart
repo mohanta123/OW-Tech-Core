@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ow_tech_core/buyer_side/category/product_description.dart';
 
+import '../../Text_font_class/text_font_class.dart';
 import '../../color/color.dart';
 import 'demo.dart';
 
@@ -61,9 +62,16 @@ class _ItemmState extends State<Itemm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: InkWell(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back,color: Colors.white,)),
         centerTitle: true,
-        backgroundColor: colorObj.pruple,
-        title: Text("OW Tech Core",style: TextStyle(color: Colors.white),),
+        backgroundColor: colorObj.main_colorP,
+        title: Text("Items",style: TextFont.bold_TextStyle.copyWith(
+          color: Colors.white,
+        ),),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -113,8 +121,9 @@ class _ItemmState extends State<Itemm> {
                             Center(
                               child: Text(
                                 "${CatItem.elementAt(index)["title"]}",
-                                style: TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.bold),
+                                style: TextFont.normal_TextStyle.copyWith(fontSize: 12,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                             SizedBox(

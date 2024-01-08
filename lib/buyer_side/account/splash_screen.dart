@@ -33,7 +33,7 @@ class _Slash_screenState extends State<Slash_screen> {
                 padding: const EdgeInsets.all(5),
                 child: Center(
                   child: Image.asset(
-                    "assets/logo-color.png",
+                    "assets/banner/onewholesale_png_3x-removebg-preview.png",
                   ),
                 ),
               ),

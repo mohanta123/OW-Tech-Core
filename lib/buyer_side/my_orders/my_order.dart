@@ -20,7 +20,7 @@ class _MyOrderState extends State<MyOrder> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: colorObj.pruple,
+        backgroundColor: colorObj.main_colorP,
         title: Text("My Orders",style: TextStyle(color: Colors.white),),
       ),
       body: Column(
