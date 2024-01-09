@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 padding: const EdgeInsets.all(5),
                 child: Center(
                   child: Image.asset(
-                    "assets/logo-color.png",
+                    "assets/banner/onewholesale_png_3x-removebg-preview.png",
                   ),
                 ),
               ),

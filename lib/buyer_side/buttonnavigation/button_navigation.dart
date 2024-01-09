@@ -1,9 +1,6 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
-
 import '../../color/color.dart';
 import '../account/my_account.dart';
 import '../basket/basket.dart';
@@ -16,7 +13,7 @@ class Button_navigation extends StatefulWidget {
   State<Button_navigation> createState() => _Button_navigationState();
 }
 class _Button_navigationState extends State<Button_navigation> {
-  int _currentPageIndex = 0; // Track the current page index
+  int _currentPageIndex = 0;
   final List<Widget> _pages = [
     HomePage(),
     Basket(),
@@ -54,10 +51,10 @@ class _Button_navigationState extends State<Button_navigation> {
           color: Colors.black,
           fontWeight: FontWeight.w500,
         ),
-        tabIconColor: colorObj.pruple,
+        tabIconColor: colorObj.main_colorP,
         tabIconSize: 28.0,
         tabIconSelectedSize: 26.0,
-        tabSelectedColor: colorObj.pruple,
+        tabSelectedColor: colorObj.main_colorP,
         tabIconSelectedColor: Colors.white,
         tabBarColor: const Color(0xFFAFAFAF),
         onTabItemSelected: (index) {

@@ -1,10 +1,7 @@
-// ignore_for_file: prefer_const_constructors, avoid_print, sized_box_for_whitespace
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:matcher/matcher.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import '../../Text_font_class/text_font_class.dart';
 import '../../color/color.dart';
 import 'item.dart';
 
@@ -20,14 +17,11 @@ class _GrocerySubCatState extends State<GrocerySubCat> {
   List imageList = [
     {"id": 1, "image_path": "assets/banner/b1.jpeg"},
     {"id": 2, "image_path": "assets/banner/b2.jpeg"},
-    {"id": 3, "image_path": "assets/banner/b3.jpeg"},
-    {"id": 4, "image_path": "assets/banner/b4.jpeg"},
-    {"id": 5, "image_path": "assets/banner/b5.jpeg"},
-    {"id": 6, "image_path": "assets/banner/Banner7.jpg"},
-    {"id": 7, "image_path": "assets/banner/b6.webp"},
-    {"id": 8, "image_path": "assets/banner/Banner3.jpg"},
-    {"id": 9, "image_path": "assets/banner/Banner5.png"},
-    {"id": 10, "image_path": "assets/banner/Banner8.jpg"},
+    {"id": 3, "image_path": "assets/banner/b5.jpeg"},
+    {"id": 4, "image_path": "assets/banner/Banner7.jpg"},
+    {"id": 5, "image_path": "assets/banner/Banner3.jpg"},
+    {"id": 6, "image_path": "assets/banner/Banner5.png"},
+    {"id": 7, "image_path": "assets/banner/Banner8.jpg"},
   ];
   final List<Map<String, dynamic>> CatItem = [
     {
@@ -67,24 +61,20 @@ class _GrocerySubCatState extends State<GrocerySubCat> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: InkWell(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back,color: Colors.white,)),
         centerTitle: true,
-        backgroundColor: colorObj.pruple,
-        title: Text("OW Tech Core",style: TextStyle(color: Colors.white),),
+        backgroundColor: colorObj.main_colorP,
+        title: Text("Product",style: TextFont.bold_TextStyle.copyWith(
+          color: Colors.white,
+        ),),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                child: Image.asset(
-                  "assets/banner/con.png",
-                  height: 180,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
             Column(children: [
               Stack(
                 children: [
@@ -160,7 +150,9 @@ class _GrocerySubCatState extends State<GrocerySubCat> {
               ),
               Text(
                 "SHOP BY CATEGORY",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextFont.bold_TextStyle.copyWith(
+                    color: Colors.black,
+                  ),
               ),
               SizedBox(
                 height: 10,
@@ -169,7 +161,7 @@ class _GrocerySubCatState extends State<GrocerySubCat> {
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  mainAxisExtent: 140,
+                  mainAxisExtent: 160,
                   crossAxisCount: 2,
                 ),
                 itemCount: CatItem.length,
@@ -204,9 +196,9 @@ class _GrocerySubCatState extends State<GrocerySubCat> {
                               Center(
                                 child: Text(
                                   "${CatItem.elementAt(index)["title"]}",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold),
+                                  style: TextFont.normal_TextStyle.copyWith(
+                                    color: Colors.black,fontSize: 12,
+                                  ),
                                 ),
                               ),
                             ],

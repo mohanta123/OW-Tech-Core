@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../../Text_font_class/text_font_class.dart';
 import '../../color/color.dart';
 import '../account/login.dart';
 import '../basket/basket.dart';
@@ -16,14 +18,13 @@ class _HomePageState extends State<HomePage> {
   List imageList = [
     {"id": 1, "image_path": "assets/banner/b1.jpeg"},
     {"id": 2, "image_path": "assets/banner/b2.jpeg"},
-    {"id": 3, "image_path": "assets/banner/b3.jpeg"},
-    {"id": 4, "image_path": "assets/banner/b4.jpeg"},
-    {"id": 5, "image_path": "assets/banner/b5.jpeg"},
-    {"id": 6, "image_path": "assets/banner/Banner7.jpg"},
-    {"id": 7, "image_path": "assets/banner/b6.webp"},
-    {"id": 8, "image_path": "assets/banner/Banner3.jpg"},
-    {"id": 9, "image_path": "assets/banner/Banner5.png"},
-    {"id": 10, "image_path": "assets/banner/Banner8.jpg"},
+
+    {"id": 3, "image_path": "assets/banner/b5.jpeg"},
+    {"id": 4, "image_path": "assets/banner/Banner7.jpg"},
+
+    {"id": 5, "image_path": "assets/banner/Banner3.jpg"},
+    {"id": 6, "image_path": "assets/banner/Banner5.png"},
+    {"id": 7, "image_path": "assets/banner/Banner8.jpg"},
   ];
   final CarouselController carouselController = CarouselController();
   int currentSlider = 0;
@@ -110,24 +111,19 @@ class _HomePageState extends State<HomePage> {
       "images": "assets/banner/hair_care-removebg-preview.png"
     },
   ];
-
   ColorSelect colorObj = ColorSelect();
-
   ///Barnd item
   final List<Map<String, dynamic>> BarndItem = [
     {"title": "Haldiram", "images": "assets/banner/Haldiram's.png"},
-    {"title": "Kroger", "images": "assets/banner/kroger.png"},
-    {"title": "Lifebuoy", "images": "assets/banner/Lifebuoy.png"},
+    {"title": "Goldmedal", "images": "assets/banner/goldmedal new.png"},
+    {"title": "Dabur", "images": "assets/banner/Dabur-Logo.wine-removebg-preview.png"},
     {"title": "Mtr", "images": "assets/banner/MTR.png"},
-    {"title": "Nestle", "images": "assets/banner/Nestle.png"},
-    {"title": "Oreo", "images": "assets/banner/Oreo.png"},
-    {"title": "Redbull", "images": "assets/banner/Red_bull.png"},
-    {"title": "Subway", "images": "assets/banner/Sub_way.png"},
-    {"title": "Suvai", "images": "assets/banner/suvai.png"},
+    {"title": "Crompton", "images": "assets/banner/Crompton-Logo-Vector-removebg-preview.png"},
   ];
 
   @override
   Widget build(BuildContext context) {
+    double mainAxisExtent = MediaQuery.of(context).size.width >= 600 ? 300 : 200;
     double deviceHeight = MediaQuery.of(context).size.height;
     double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -136,18 +132,12 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text("Padma Lochan"),
-              accountEmail: Text("Padmalochan277@gmail.com"),
-              currentAccountPicture: CircleAvatar(
-                child: ClipOval(
-                  child: Image.asset(
-                    "assets/profile.png",
-                    width: 90,
-                    height: 90,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              accountName: Text("Padma Lochan",style: TextFont.bold_TextStyle.copyWith(
+                color: Colors.white,
+              ),),
+              accountEmail: Text("Padmalochan277@gmail.com",style: TextFont.normal_TextStyle.copyWith(
+                color: Colors.white,
+              ),),
               decoration: BoxDecoration(color: colorObj.pruple),
             ),
             ListTile(
@@ -160,8 +150,9 @@ class _HomePageState extends State<HomePage> {
               },
               title: Text(
                 "Home",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextFont.normal_TextStyle.copyWith(
+                  color: Colors.black,
+                ),
               ),
               leading: Icon(Icons.home, color: colorObj.pruple,),
             ),
@@ -175,8 +166,9 @@ class _HomePageState extends State<HomePage> {
               },
               title: Text(
                 "Account",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextFont.normal_TextStyle.copyWith(
+                  color: Colors.black,
+                ),
               ),
               leading: Icon(
                 Icons.account_box,
@@ -193,8 +185,9 @@ class _HomePageState extends State<HomePage> {
               },
               title: Text(
                 "cart",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextFont.normal_TextStyle.copyWith(
+                  color: Colors.black,
+                ),
               ),
               leading: Icon(
                 Icons.shopping_cart,
@@ -205,8 +198,9 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               title: Text(
                 "Logout",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextFont.normal_TextStyle.copyWith(
+                  color: Colors.black,
+                ),
               ),
               leading: Icon(
                 Icons.logout,
@@ -219,11 +213,18 @@ class _HomePageState extends State<HomePage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80.0),
         child: AppBar(
+          leading: Builder(
+            builder: (context)=>IconButton(onPressed: (){
+              Scaffold.of(context).openDrawer();
+            }, icon: Icon(Icons.menu,color: Colors.white,)),
+          ),
           //   backgroundColor: Colors.pink,
           centerTitle: true,
-          backgroundColor: colorObj.pruple,
+          backgroundColor: colorObj.main_colorP,
           title: Text(
-            "OW Tech Core",style: TextStyle(color: Colors.white),
+            "OW Tech Core",style: TextFont.bold_TextStyle.copyWith(
+            color: Colors.white,
+          ),
           ),
           actions: [
             Padding(
@@ -241,7 +242,7 @@ class _HomePageState extends State<HomePage> {
               TextField(
                 decoration: InputDecoration(
                   filled: true,
-                  fillColor: Colors.grey[350],
+                  fillColor: Colors.grey[200],
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0),
                       borderSide: BorderSide.none),
@@ -331,7 +332,6 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -340,24 +340,21 @@ class _HomePageState extends State<HomePage> {
                           Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5),
-                                color: colorObj.pruple),
+                                color: colorObj.main_colorP),
                             width: double.infinity,
-                            height: 38,
+                            height: deviceHeight*0.04,
                             child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "SHOP BY CATEGORIES",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(width: 7,),
+                                  Text(
+                                    "SHOP BY CATEGORIES",
+                                    style: TextFont.bold_TextStyle.copyWith(
+                                      color: Colors.white,
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -368,16 +365,13 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(
                         top: 10,
                       ),
-
-                      //grid view .builder
-
                       child: GridView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                          mainAxisExtent: 150,
-                          crossAxisCount: 3,
+                              crossAxisCount: 3,
+                          mainAxisExtent: 180,
                         ),
                         itemCount: CatItem.length,
                         itemBuilder: (_, index) {
@@ -393,7 +387,6 @@ class _HomePageState extends State<HomePage> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)),
                               shadowColor: Colors.black,
-                              elevation: 4,
                               child: Padding(
                                 padding: const EdgeInsets.only(
                                     left: 5, right: 5, bottom: 10, top: 5),
@@ -411,9 +404,9 @@ class _HomePageState extends State<HomePage> {
                                       Center(
                                         child: Text(
                                           "${CatItem.elementAt(index)["title"]}",
-                                          style: TextStyle(
-                                              fontSize: 10,
-                                              fontWeight: FontWeight.bold),
+                                          style: TextFont.normal_TextStyle.copyWith(
+                                            color: Colors.black,fontSize: 12
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -428,12 +421,11 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-
               ///Shop by brand
               Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    color: colorObj.pruple),
+                    color: colorObj.main_colorP),
                 height: 45,
                 width: double.infinity,
                 child: Row(
@@ -443,10 +435,9 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
                         "SHOP BY BRANDS",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                        style: TextFont.bold_TextStyle.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ],
@@ -476,7 +467,7 @@ class _HomePageState extends State<HomePage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       shadowColor: Colors.black,
-                      elevation: 4,
+
                       child: Padding(
                         padding: const EdgeInsets.only(
                             left: 5, right: 5, bottom: 10, top: 5),
@@ -493,9 +484,9 @@ class _HomePageState extends State<HomePage> {
                               Center(
                                 child: Text(
                                   "${BarndItem.elementAt(index)["title"]}",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold),
+                                  style: TextFont.normal_TextStyle.copyWith(
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
                             ],

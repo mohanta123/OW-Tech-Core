@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+import '../../Text_font_class/text_font_class.dart';
 import '../../color/color.dart';
 
 
@@ -31,10 +32,16 @@ class _ProductDescriptionState extends State<ProductDescription> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back,color: Colors.white,),
+        leading: InkWell(
+          onTap: (){
+            Navigator.pop(context);
+          },
+            child: Icon(Icons.arrow_back,color: Colors.white,)),
         centerTitle: true,
-        backgroundColor: colorObj.pruple,
-        title: Text("OW Tech Core",style: TextStyle(color: Colors.white),),
+        backgroundColor: colorObj.main_colorP,
+        title: Text("Product",style: TextFont.bold_TextStyle.copyWith(
+          color: Colors.white,
+        ),),
       ),
       body: Stack(children: [
         Padding(
@@ -83,18 +90,24 @@ class _ProductDescriptionState extends State<ProductDescription> {
                 const SizedBox(
                   height: 40,
                 ),
-                Text("ASHIRVAAD Atta with MultiGrains (1 kg)"),
+                Text("ASHIRVAAD Atta with MultiGrains (1 kg)",style: TextFont.normal_TextStyle.copyWith(
+                  color: Colors.black,
+                ),),
                 SizedBox(
                   height: 10,
                 ),
                 Text(
                   "MRP ₹67",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextFont.bold_TextStyle.copyWith(
+                    color: Colors.black,fontSize: 18,
+                  ),
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Text("Free Delivery on Order over ₹599"),
+                Text("Free Delivery on Order over ₹599",style: TextFont.normal_TextStyle.copyWith(
+                  color: Colors.black,
+                ),),
                 SizedBox(
                   height: 10,
                 ),
@@ -111,16 +124,18 @@ class _ProductDescriptionState extends State<ProductDescription> {
                           }),
                       Text(
                         "₹ 67",
-                        style: TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.bold),
+                        style: TextFont.bold_TextStyle.copyWith(
+                          color: Colors.black,fontSize: 17
+                        ),
                       ),
                       SizedBox(
                         width: 240,
                       ),
                       Text(
                         "1 Kg",
-                        style: TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.bold),
+                        style: TextFont.bold_TextStyle.copyWith(
+                          color: Colors.black,fontSize: 17
+                        ),
                       ),
                     ],
                   ),
@@ -146,16 +161,18 @@ class _ProductDescriptionState extends State<ProductDescription> {
                           }),
                       Text(
                         "₹ 296",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 17),
+                        style: TextFont.bold_TextStyle.copyWith(
+                          color: Colors.black,fontSize: 17,
+                        ),
                       ),
                       SizedBox(
                         width: 237,
                       ),
                       Text(
                         "5 Kg",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 17),
+                        style: TextFont.bold_TextStyle.copyWith(
+                          color: Colors.black,fontSize: 17
+                        ),
                       ),
                     ],
                   ),
@@ -212,10 +229,10 @@ class _ProductDescriptionState extends State<ProductDescription> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text("Add To cart",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold))
+                      style: TextFont.bold_TextStyle.copyWith(
+                        color: Colors.white,fontSize: 18,
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -226,10 +243,10 @@ class _ProductDescriptionState extends State<ProductDescription> {
               alignment: Alignment.center,
               color: Colors.red,
               child: Text("BUY NOW",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.white)),
+                style: TextFont.bold_TextStyle.copyWith(
+                  color: Colors.white,fontSize: 18,
+                ),
+              ),
             ),
           ],
         ),
