@@ -40,6 +40,16 @@ dependencies:
   order_tracker: ^0.0.2
   flutter_spinkit: ^5.2.0
 
+  equatable: ^2.0.0
+  shared_preferences: ^2.0.16
+  hive:
+  hive_flutter:
+  http:
+  path:
+  path_provider:
+  image_picker: ^0.8.6
+  camera: ^0.10.0+3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

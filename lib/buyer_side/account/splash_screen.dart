@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import '../User_interface/views/login_page.dart';
 import '../buttonnavigation/button_navigation.dart';
 import '../home/home_page.dart';
-class Slash_screen extends StatefulWidget {
-  const Slash_screen({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
   @override
-  State<Slash_screen> createState() => _Slash_screenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
-class _Slash_screenState extends State<Slash_screen> {
+class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     _navigatehome();
@@ -14,7 +15,7 @@ class _Slash_screenState extends State<Slash_screen> {
   _navigatehome() async {
     await Future.delayed(Duration(seconds:5), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Button_navigation()));
+        context, MaterialPageRoute(builder: (context) => LoginPage()));
     //Login()
   }
   @override
