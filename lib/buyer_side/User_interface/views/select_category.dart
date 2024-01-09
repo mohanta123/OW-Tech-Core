@@ -33,6 +33,7 @@ class _SelectCategoryState extends State<SelectCategory> {
                   ),
                   const hr(),
 
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
